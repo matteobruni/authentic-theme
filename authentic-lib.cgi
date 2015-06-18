@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 13.02 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 13.05 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -750,11 +750,23 @@ sub print_easypie_charts {
         @m = @{ $info->{'mem'} };
         if ( @m && $m[0] ) {
             my $percent = ( $m[0] - $m[1] ) / $m[0] * 100;
-            print_easypie_chart( $columns, $percent, $text{'body_real'} );
+            print_easypie_chart(
+                $columns, $percent,
+                (   ( $current_lang eq 'ru' || $current_lang eq 'ru.UTF-8' )
+                    ? $text{'body_real2'}
+                    : $text{'body_real'}
+                )
+            );
         }
         if ( @m && $m[2] ) {
             my $percent = ( $m[2] - $m[3] ) / $m[2] * 100;
-            print_easypie_chart( $columns, $percent, $text{'body_virt'} );
+            print_easypie_chart(
+                $columns, $percent,
+                (   ( $current_lang eq 'ru' || $current_lang eq 'ru.UTF-8' )
+                    ? $text{'body_virt2'}
+                    : $text{'body_virt'}
+                )
+            );
         }
     }
 
@@ -762,7 +774,13 @@ sub print_easypie_charts {
     if ( $info->{'disk_total'} ) {
         ( $total, $free ) = ( $info->{'disk_total'}, $info->{'disk_free'} );
         my $percent = ( $total - $free ) / $total * 100;
-        print_easypie_chart( $columns, $percent, $text{'body_disk'} );
+        print_easypie_chart(
+            $columns, $percent,
+            (   ( $current_lang eq 'ru' || $current_lang eq 'ru.UTF-8' )
+                ? $text{'body_disk2'}
+                : $text{'body_disk'}
+            )
+        );
     }
     print '</div>' . "\n";
 }
@@ -1148,10 +1166,37 @@ sub _settings {
             'u',
             'settings_hotkey_toggle_key_webmail',
             'm',
+            'settings_hotkey_sysinfo',
+            'i',
             'settings_hotkey_focus_search',
             's',
             'settings_hotkey_reload',
             'r',
+            '__',
+            _settings(
+                'fa',
+                'sub-title',
+                '' . "~"
+                    . &text('settings_right_hotkey_custom_options_description')
+            ),
+            'settings_hotkey_custom_1',
+            'settings-editor_read.cgi',
+            'settings_hotkey_custom_2',
+            'settings-upload.cgi',
+            'settings_hotkey_custom_3',
+            '',
+            'settings_hotkey_custom_4',
+            '',
+            'settings_hotkey_custom_5',
+            '',
+            'settings_hotkey_custom_6',
+            '',
+            'settings_hotkey_custom_7',
+            '',
+            'settings_hotkey_custom_8',
+            '',
+            'settings_hotkey_custom_9',
+            '',
 
             '__',
             _settings(
@@ -1169,7 +1214,7 @@ sub _settings {
             'settings_sysinfo_drive_status_on_new_line',
             'true',
             'settings_sysinfo_expand_all_accordions',
-            'true',
+            'false',
 
             '__',
             _settings(
@@ -1395,19 +1440,22 @@ sub _settings {
         elsif (index( $k, 'settings_security_notify_on_' ) != -1
             || index( $k, 'settings_hotkey_toggle_key_' ) != -1
             || $k eq 'settings_hotkey_focus_search'
-            || $k eq 'settings_hotkey_reload' )
+            || $k eq 'settings_hotkey_reload'
+            || $k eq 'settings_hotkey_sysinfo' )
         {
 
             my $width
                 = (    index( $k, 'settings_hotkey_toggle_key_' ) != -1
                     || $k eq 'settings_hotkey_focus_search'
-                    || $k eq 'settings_hotkey_reload' )
+                    || $k eq 'settings_hotkey_reload'
+                    || $k eq 'settings_hotkey_sysinfo' )
                 ? ' width: 31px; '
                 : ' width: 95%; ';
             my $max_length
                 = (    index( $k, 'settings_hotkey_toggle_key_' ) != -1
                     || $k eq 'settings_hotkey_focus_search'
-                    || $k eq 'settings_hotkey_reload' )
+                    || $k eq 'settings_hotkey_reload'
+                    || $k eq 'settings_hotkey_sysinfo' )
                 ? ' maxlength="1"'
                 : ' ';
 
@@ -1421,6 +1469,27 @@ sub _settings {
                 . $max_length . '>
             ';
 
+        }
+        elsif ($k eq 'settings_hotkey_custom_1'
+            || $k eq 'settings_hotkey_custom_2'
+            || $k eq 'settings_hotkey_custom_3'
+            || $k eq 'settings_hotkey_custom_4'
+            || $k eq 'settings_hotkey_custom_5'
+            || $k eq 'settings_hotkey_custom_6'
+            || $k eq 'settings_hotkey_custom_7'
+            || $k eq 'settings_hotkey_custom_8'
+            || $k eq 'settings_hotkey_custom_9' )
+        {
+            my $width = ' width: 40%; ';
+
+            $v = '
+                <input style="display: inline;'
+                . $width
+                . 'height: 28px; vertical-align: middle;" class="form-control ui_textbox" type="text" name="'
+                . $k
+                . '" value="'
+                . $v . '">
+            ';
         }
         elsif ( $k eq 'settings_right_default_tab_webmin' ) {
             $v = '<select class="ui_select" name="' . $k . '">
@@ -1563,11 +1632,14 @@ sub _settings {
                 \%in );
         }
         if ( $t eq 'restore' ) {
-            write_file( $config_directory . "/authentic-theme/settings.js",
-                '' );
+            unlink_file($config_directory . "/authentic-theme/settings.js");
+            if ( usermin_available() ) {
+                unlink_file($__usermin_config . "/authentic-theme/settings.js");
+            }
         }
 
         if ( usermin_available() ) {
+            unlink_file($__usermin_config . "/authentic-theme/settings.js");
             copy_source_dest(
                 $config_directory . "/authentic-theme/settings.js",
                 $__usermin_config . "/authentic-theme" );
@@ -1576,6 +1648,7 @@ sub _settings {
         if ( -r $config_directory . "/authentic-theme/logo.png"
             && usermin_available() )
         {
+            unlink_file($__usermin_config . "/authentic-theme/logo.png");
             copy_source_dest(
                 $config_directory . "/authentic-theme/logo.png",
                 $__usermin_config . "/authentic-theme"
@@ -1584,6 +1657,7 @@ sub _settings {
         if ( -r $config_directory . "/authentic-theme/logo_welcome.png"
             && usermin_available() )
         {
+            unlink_file($__usermin_config . "/authentic-theme/logo_welcome.png");
             copy_source_dest(
                 $config_directory . "/authentic-theme/logo_welcome.png",
                 $__usermin_config . "/authentic-theme" );
