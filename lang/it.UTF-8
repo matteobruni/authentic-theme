@@ -32,6 +32,8 @@ body_usermin=Versione Usermin
 body_virt=Memoria virtuale
 body_webmin=Versione Webmin
 
+left_favorites=Favorites
+left_favorites_no=There were no favorites added yet...
 left_feedback=Invia Feedback
 left_home=Informazioni di Sistema
 left_others=Altri
@@ -123,6 +125,20 @@ settings_security_description=Security alerts will let you setup email notificat
 settings_right_hotkey_options_title=Hotkey options
 settings_right_sysinfo_page_options_title=System Information page options
 
+settings_right_hotkey_custom_options_description=Custom links enable you to use digits from <code>1</code> to <code>9</code> in order to quick-access any valid Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> The <code>URL</code> can be extracted from the currently opened right frame content page, by reading its source. It's important that <code>URL</code> has no slash at the begining and doesn't use prefixes. For example, to quick-switch to Apache, set to <code>custom link 1</code> field <code>apache.</code> If the default hotkeys modifier set to <code>Alt,</code> clicking <code>Alt+1</code>, will open you Apache module.
+settings_hotkey_custom_1=Custom link <code>1</code>
+settings_hotkey_custom_2=Custom link <code>2</code>
+settings_hotkey_custom_3=Custom link <code>3</code>
+settings_hotkey_custom_4=Custom link <code>4</code>
+settings_hotkey_custom_5=Custom link <code>5</code>
+settings_hotkey_custom_6=Custom link <code>6</code>
+settings_hotkey_custom_7=Custom link <code>7</code>
+settings_hotkey_custom_8=Custom link <code>8</code>
+settings_hotkey_custom_9=Custom link <code>9</code>
+
+settings_animation_left=Enable animation in navigation menu
+settings_animation_tabs=Enable animation in tabs
+settings_loader_top=Enable page progress loader on top of the screen
 settings_loader_left=Enable spinner for navigation menu
 settings_loader_right=Enable spinner for content page
 settings_right_reload=Load default content page
@@ -147,6 +163,7 @@ settings_window_customized_checkboxes_and_radios=Enable customized checkboxes an
 
 settings_leftmenu_section_hide_refresh_modules=Hide <kbd>Refresh Modules</kbd> link
 settings_leftmenu_section_hide_unused_modules=Hide <kbd>Unused Modules</kbd> link
+settings_favorites=Show favorites button
 settings_leftmenu_button_language=Show language button
 settings_leftmenu_button_refresh=Show refresh button
 
@@ -159,6 +176,8 @@ settings_hotkey_toggle_key_virtualmin=Hotkey for Virtualmin
 settings_hotkey_toggle_key_cloudmin=Hotkey for Cloudmin
 settings_hotkey_toggle_key_usermin=Hotkey for Usermin
 settings_hotkey_toggle_key_webmail=Hotkey for Mail
+settings_hotkey_sysinfo=Hotkey for System Information
+settings_hotkey_favorites=Hotkey for Favorites
 settings_hotkey_focus_search=Hotkey for search field
 settings_hotkey_reload=Hotkey for page reload
 

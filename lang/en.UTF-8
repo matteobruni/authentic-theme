@@ -32,6 +32,8 @@ body_usermin=Usermin Version
 body_virt=Virtual memory
 body_webmin=Webmin version
 
+left_favorites=Favorites
+left_favorites_no=There were no favorites added yet...
 left_feedback=Send Feedback
 left_home=System Information
 left_others=Others
@@ -101,7 +103,7 @@ settings_right_saving=Saving
 settings_right_theme_extensions=Theme extensions
 settings_right_theme_extensions_title=Theme Extensions
 settings_right_file_edit=Edit extension file:
-settings_right_extensions_title=Theme extensive design, enables you easily manipulate on targeted parts of the interface. It's possible to access both <em>CSS</em> and <em>JavaScript</em>, by writing custom <em>styles</em>/<em>scripts</em> extensions. Following are the plain examples, made to help you understand the basic idea of its application. For example, in order to change the color of the background, add the following style to CSS extension: <code>body {background-color: Gainsboro}</code>. Using JavaScript, to change submit button's width, add the following code to JavaScript extension: <code>$('button[type="submit"]').animate({width: "100%"}, 1000)</code>. However, in practice, it will be more complicated than that.
+settings_right_extensions_title=Theme extensive design, enables you easily manipulate on targeted parts of the interface.  There is already built extensions, that you can <a href="https://github.com/qooob/authentic-theme-extensions" target="_blank">download</a> and use. It's possible to access both <em>CSS</em> and <em>JavaScript</em>, by writing custom <em>styles</em>/<em>scripts</em> extensions. Following are the plain examples, made to help you understand the basic idea of its application. For example, in order to change the color of the background, add the following style to CSS extension: <code>body {background-color: Gainsboro}</code>. Using JavaScript, to change submit button's width, add the following code to JavaScript extension: <code>$('button[type="submit"]').animate({width: "100%"}, 1000)</code>. However, in practice, it will be more complicated than that.
 
 settings_right_theme_logos=Theme logos
 settings_right_theme_logos_title=Theme Logos
@@ -119,10 +121,24 @@ settings_right_window_options_title=Window options
 settings_right_navigation_menu_title=Navigation menu options
 settings_right_table_options_title=Table options
 settings_security_title=Security Alerts options
-settings_security_description=Security alerts will let you setup email notifications upon certain events.<br class="lh0">Format: <code>Message|Subject|Comma separated list of users/emails|Comma separated list of ignored IPv4/IPv6</code><br class="lh0">Usage: <code>%3 successful login alert for user %1 from %2|%3 successful login alert|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0"> Output: <code>From: root, To: root, Subject: Webmin successful login alert, Message: Webmin successful login alert for user root from 2.3.4.5</code>
+settings_security_description=Security alerts will let you setup email notifications upon certain  events. (Linux <code>mail</code> command is required for this feature to work)<br class="lh0">Format: <code>Message|Subject|Comma separated list of users/emails|Comma separated list of ignored IPv4/IPv6</code><br class="lh0">Usage: <code>%3 successful login alert for user %1 from %2|%3 successful login alert|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0"> Output: <code>From: root, To: root, Subject: Webmin successful login alert, Message: Webmin successful login alert for user root from 2.3.4.5</code>
 settings_right_hotkey_options_title=Hotkey options
 settings_right_sysinfo_page_options_title=System Information page options
 
+settings_right_hotkey_custom_options_description=Custom links enable you to use digits from <code>1</code> to <code>9</code> in order to quick-access any valid Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> The <code>URL</code> can be extracted from the currently opened right frame content page, by reading its source. It's important that <code>URL</code> has no slash at the begining and doesn't use prefixes. For example, to quick-switch to Apache, set to <code>custom link 1</code> field <code>apache.</code> If the default hotkeys modifier set to <code>Alt,</code> clicking <code>Alt+1</code>, will open you Apache module.
+settings_hotkey_custom_1=Custom link <code>1</code>
+settings_hotkey_custom_2=Custom link <code>2</code>
+settings_hotkey_custom_3=Custom link <code>3</code>
+settings_hotkey_custom_4=Custom link <code>4</code>
+settings_hotkey_custom_5=Custom link <code>5</code>
+settings_hotkey_custom_6=Custom link <code>6</code>
+settings_hotkey_custom_7=Custom link <code>7</code>
+settings_hotkey_custom_8=Custom link <code>8</code>
+settings_hotkey_custom_9=Custom link <code>9</code>
+
+settings_animation_left=Enable animation in navigation menu
+settings_animation_tabs=Enable animation in tabs
+settings_loader_top=Enable page progress loader on top of the screen
 settings_loader_left=Enable spinner for navigation menu
 settings_loader_right=Enable spinner for content page
 settings_right_reload=Load default content page
@@ -145,8 +161,9 @@ settings_window_autoscroll_description=Perform window automatic scroll down, upo
 
 settings_window_customized_checkboxes_and_radios=Enable customized checkboxes and radio buttons
 
-settings_leftmenu_section_hide_refresh_modules=Hide <kbd>Refresh Modules</kbd> link
-settings_leftmenu_section_hide_unused_modules=Hide <kbd>Unused Modules</kbd> link
+settings_leftmenu_section_hide_refresh_modules=Hide refresh modules link
+settings_leftmenu_section_hide_unused_modules=Hide un-used modules section
+settings_favorites=Show favorites button
 settings_leftmenu_button_language=Show language button
 settings_leftmenu_button_refresh=Show refresh button
 
@@ -159,6 +176,8 @@ settings_hotkey_toggle_key_virtualmin=Hotkey for Virtualmin
 settings_hotkey_toggle_key_cloudmin=Hotkey for Cloudmin
 settings_hotkey_toggle_key_usermin=Hotkey for Usermin
 settings_hotkey_toggle_key_webmail=Hotkey for Mail
+settings_hotkey_sysinfo=Hotkey for System Information
+settings_hotkey_favorites=Hotkey for Favorites
 settings_hotkey_focus_search=Hotkey for search field
 settings_hotkey_reload=Hotkey for page reload
 
@@ -171,8 +190,8 @@ settings_sysinfo_theme_updates=Check for Authentic Theme updates
 settings_sysinfo_csf_updates=Check for ConfigServer Security & Firewall updates
 settings_sysinfo_drive_status_on_new_line=Show drives' status each on new line
 settings_sysinfo_expand_all_accordions=Make all accordions expanded
-settings_sysinfo_link_mini=Display <kbd>System Information</kbd> link as a button
-settings_leftmenu_singlelink_icons=Show navigation menu's single links' icons in Virtualmin/Cloudmin
+settings_sysinfo_link_mini=Display system information link as a button
+settings_leftmenu_singlelink_icons=Show single links' icons on navigation menu in Virtualmin/Cloudmin
 
 settings_right_page_defaults_title=Default pages
 settings_right_default_tab_webmin=Default tab after logging in to Webmin
@@ -180,9 +199,9 @@ settings_right_default_tab_usermin=Default tab after logging in to Usermin
 settings_right_virtualmin_default=Default page for Virtualmin
 settings_right_cloudmin_default=Default page for Cloudmin
 
-settings_leftmenu_vm_installscripts=Show <kbd>Install Scripts</kbd> link in Virtualmin
-settings_leftmenu_vm_webpages=Show <kbd>Edit Web Pages</kbd> link in Virtualmin
-settings_leftmenu_vm_backup_amazon=Show <kbd>Amazon S3 Buckets</kbd> link in Virtualmin
+settings_leftmenu_vm_installscripts=Show install scripts link in Virtualmin
+settings_leftmenu_vm_webpages=Show edit web pages link in Virtualmin
+settings_leftmenu_vm_backup_amazon=Show Amazon S3 buckets link in Virtualmin
 
 
 

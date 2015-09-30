@@ -1,5 +1,129 @@
 ##Changelog
 
+####Version 16.01 (September 27, 2015)
+* Fixed bugs [#247](https://github.com/qooob/authentic-theme/issues/247) [#252](https://github.com/qooob/authentic-theme/issues/252)
+
+####Version 16.00 (September 18, 2015)
+* Improved theme's _performance_ by overall code optimization (biggest in theme's history)
+* Improved support for _Firefox_. _Firefox_ version 42+ will render animations very smoothly and provide, in general, same experience as _Chrome_ now
+* Improved support for _ConfigServer Security & Firewall_ module
+* Added smart focus on visible search fields - no need to focus manually - just start typing and the theme will automatically decide what to do
+* Added support for _Edge_ browser, which now can render theme properly
+* Added ability to dismiss the left spinner with `Ctrl + Esc` key combination and/or its close button, that appears after 3 seconds of spinner activity
+* Fixed in _Filemin_ module, to submit all table rows, disregard of visibility (pagination)
+* Fixed in _Filemin_ module looped XHR requests, which made it twice slower
+* Added for _Filemin_ module extended user-friendly notifications
+* Added for _Filemin_ module state of the art _keyboard navigation_
+	* `alphanumeric typing` - quick search
+	* `up/down, home/end` - cursor position
+	* `enter` - descent into selected
+	  * in case there is only one row filtered, enter on search field will perform trigger
+	* `spacebar` - select current row
+	* `backspace` - previous folder
+	* `*` - inverse select
+	* `+` - select all
+	* `-` - deselect all
+	* `F2` - change permissions
+	* `F3` - change ownership
+	* `F4` - edit where possible
+	* `F5/Shift+F5` - compress/decompress
+	* `F6` - rename
+	* `Shift+F4/F7` - new file/folder
+	* `Shift+F7` - search
+	* `F8/Del` - delete
+	* `Ctrl+X/C/V` - Cut/Copy/Paste
+	* `Ctrl+Enter/Ctrl+Shift+Enter` - Save/Save and close currently edited file
+	* `Theme reload hot key` - reload current directory
+* Deuglifed a link for switching between basic/advanced modes in _SpamAssassin->Header and Body Tests_ module
+* Fixed bugs [#234](https://github.com/qooob/authentic-theme/issues/234) [#235](https://github.com/qooob/authentic-theme/issues/235) [#236](https://github.com/qooob/authentic-theme/issues/236) [#238](https://github.com/qooob/authentic-theme/issues/238) [#239](https://github.com/qooob/authentic-theme/issues/239) [#242](https://github.com/qooob/authentic-theme/issues/242) [#243](https://github.com/qooob/authentic-theme/issues/243) [#244](https://github.com/qooob/authentic-theme/issues/244)  [#245](https://github.com/qooob/authentic-theme/issues/245)
+* Fixed other bugs and made dozes of improvements
+
+
+####Version 15.51 (September 1, 2015)
+* Fixed initiation of the spinner, that was shown on file download in _Filemin_, while clicking on the row
+* Fixed adding bookmarks in _Filemin_ no longer locks the table
+* Fixed minor bugs [#228](https://github.com/qooob/authentic-theme/issues/228) [#230](https://github.com/qooob/authentic-theme/issues/230) [#231](https://github.com/qooob/authentic-theme/issues/231)
+
+
+####Version 15.50 (August 29, 2015)
+* Improved theme's _speed_ by code optimization
+* Improved support for _ConfigServer Security & Firewall_ module. Editor mode and code highlights are now working flawlessly
+* Added initialization of filter in _Filemin_ on plain typing (like in _Nautilus_, for example)
+* Added ability to dismiss the page loader with single escape click. Attention! Be careful when you click escape key once, the loader will disappear, when you click it over again and the loader is hidden, you will interrupt the execution of the page process
+* Changed theme auto-updates notifications to be off by default. This will not affect existing users
+* Fixed history buttons, navigating using browser's back/forward buttons now working properly
+* Fixed minor bugs [#224](https://github.com/qooob/authentic-theme/issues/224) [#226](https://github.com/qooob/authentic-theme/issues/226) [#1](https://github.com/qooob/authentic-theme-extensions/issues/1) [#57](https://github.com/Real-Gecko/filemin/issues/57)
+* Fixed dozens of other minor bugs
+
+####Version 15.00 (August 23, 2015)
+* Improved and optimized theme's _speed_ and _display_ options
+* Added a new feature of adding any right side page to global _Favorites_ [#210](https://github.com/qooob/authentic-theme/issues/210)
+* Added complete _AJAX_ support for _Filemin_ (by _Alexandr Bezenkov_), taking it to the next, absolutely new level [#222](https://github.com/qooob/authentic-theme/issues/222)
+* Added emphasis on the table sub-titles [#218](https://github.com/qooob/authentic-theme/issues/218)
+* Added CZ language, thanks to [stuchy3](https://github.com/stuchy3)
+* Fixed sorting issue by file-size in _Filemin_ and other modules, where file-size like sorting is used
+* Fixed link for _System Statistics_ in _Cloudmin_
+* Fixed multiple bugs [#213](https://github.com/qooob/authentic-theme/issues/213) [#214](https://github.com/qooob/authentic-theme/issues/214) [#220](https://github.com/qooob/authentic-theme/issues/220) [#223](https://github.com/qooob/authentic-theme/issues/223)
+* Fixed and made dozens of unmentioned bugs/improvements
+
+####Version 14.02 (July 31, 2015)
+* Fixed unrealistic bugs [#211](https://github.com/qooob/authentic-theme/issues/211)
+* Fixed dataTable function for sorting files correctly by size
+
+####Version 14.01 (July 30, 2015)
+* Added _CodeMirror_ automatic mode (highlight syntax) detection for all file-editors
+* Added support for [_Filemin_](https://github.com/Real-Gecko/filemin) file-editor and improved general support for this module
+* Fixed multiple bugs [#205](https://github.com/qooob/authentic-theme/issues/205), [#206](https://github.com/qooob/authentic-theme/issues/206), [#207](https://github.com/qooob/authentic-theme/issues/207), [#209](https://github.com/qooob/authentic-theme/issues/209)
+
+####Version 14.00 (July 21, 2015)
+
+* Improved page spinners to use no _JavaScript_, adjusted theme colors and font-weights
+* Improved code and performance by combining styles/scripts in a single package and making other custom optimizations
+* Added new date-picker to replace old _JavaScript_ pop-ups
+* Added ability, when editing custom styles/scripts or uploading custom logos, to update page content dynamically, without reload, to immediately display final outlook
+* Added overall loading progress at the top of the page (like _YouTube_ and _Medium_). Can be enabled/disabled in theme settings
+* Added _CodeMirror_ modes bundle, to be loadable on demand to support different file highlights in [_Filemin_](https://github.com/Real-Gecko/filemin/issues/21) (File manager for _Webmin_) written in _Perl_ (without use of _Java_))
+* Added locales to _TinyMCE_
+* Updated _CodeMirror_ and _TinyMCE_
+* Fixed theme HTML output to be more validator friendly
+* Fixed missing status label on managed system in _Cloudmin_ (thanks to _Jamie Cameron_ for reporting it)
+* Fixed _JavaScript_ history step back button in _Webmin_
+* Fixed _CodeMirror_ problem in _ConfigServer Security & Firewall_ module [#199](https://github.com/qooob/authentic-theme/issues/199)
+* Fixed issues with _Server Index_ module [#182](https://github.com/qooob/authentic-theme/issues/182), [#201](https://github.com/qooob/authentic-theme/issues/201)
+* Fixed an issue in _MySQL/PostgreSQL Database Server_ modules, when trying to view/edit table rows [#200](https://github.com/qooob/authentic-theme/issues/200)
+* Fixed an issue to make theme properly run when using `no_frame_options=1` option [#204](https://github.com/qooob/authentic-theme/issues/204)
+* Fixed dozens of other bugs
+
+####Version 13.10 (June 30, 2015)
+* Added an option to _disable all animation_ on the left menu and on tabs [#192](https://github.com/qooob/authentic-theme/issues/192)
+* Added `autofocus` on input field in _Command Shell_ module [#190](https://github.com/qooob/authentic-theme/issues/190)
+* Improved the look of custom radio buttons
+* Updated _Romanian_ translation
+* Fixed external links issue [#182](https://github.com/qooob/authentic-theme/issues/182)
+* Fixed different _Internet Explorer_ issues [#191](https://github.com/qooob/authentic-theme/issues/191)
+* Fixed issue with the size of input fields in _Squid Module_ [#197](https://github.com/qooob/authentic-theme/issues/197)
+* Fixed other multiple bugs
+
+####Version 13.05 (June 2, 2015)
+* Added in settings an option to use _custom links_ for quick-switching, while using digit hotkeys from 1 to 9, i.e. `Alt+1`, `Alt+2`, `Alt+3` ... `Alt+9` [#183](https://github.com/qooob/authentic-theme/issues/183)
+* Added disabled virtual servers/machines are now marked red [#184](https://github.com/qooob/authentic-theme/issues/184)
+* Fixed _line-graph bars_ issues [#185](https://github.com/qooob/authentic-theme/issues/185)
+* Fixed minor bugs
+
+####Version 13.04 (May 31, 2015)
+* Added in settings an option to quick-switch, using hotkey to _System Information_ page (`Alt+I`)
+* Fixed broken logo uploads [#181](https://github.com/qooob/authentic-theme/issues/181)
+* Fixed go back button in _Virtualmin/Cloudmin_
+* Fixed minor bugs
+
+####Version 13.03 (May 30, 2015)
+* Improved UI of _System Statistics Graphs_ and optimized its usage
+* Fixed global issue, with generation icon-like links, when _show as_ set to _icons_ in module's settings [#180](https://github.com/qooob/authentic-theme/issues/180)
+* Fixed defaults properly set for _Make all accordions expanded_ [#179](https://github.com/qooob/authentic-theme/issues/179)
+* Fixed issues in _Webmin Servers Index_ module [#178](https://github.com/qooob/authentic-theme/issues/178)
+* Fixed overflow problem when listing long titles in _Easy Pie Charts_ [#177](https://github.com/qooob/authentic-theme/issues/177)
+* Added theme extensions [repo](https://github.com/qooob/authentic-theme-extensions)
+
 ####Version 13.02 (May 27, 2015)
 * Added support for old versions of Perl [#174](https://github.com/qooob/authentic-theme/issues/174)
 

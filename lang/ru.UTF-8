@@ -4,6 +4,7 @@ body_cpuinfo=Информация о процессоре
 body_cputemps=Температура ЦП
 body_cputype=$5, $8 ядра
 body_disk=Свободное дисковое пространство
+body_disk2=Св. диск. простран.
 body_driveerr=$1 ошибок!
 body_drivefailed=SMART не прошел проверку!
 body_drivetemps=Температура дисков
@@ -17,6 +18,7 @@ body_load=$1 (1 минуту) $2 (5 минут) $3 (15 минут)
 body_os=Операционная система
 body_procs=Запущенных процессов
 body_real=Физическая память
+body_real2=Физ. память
 body_time=Время на системе
 body_updates=Обновления пакетов
 body_updays=$1 дн., $2 час., $3 мин.
@@ -30,8 +32,11 @@ body_used=$1 всего / $2 использовано
 body_used_and_free=$1 всего / $2 свободно / $3 использовано
 body_usermin=Версия Usermin
 body_virt=Виртуальная память
+body_virt2=Вирт. память
 body_webmin=Версия Webmin
 
+left_favorites=Favorites
+left_favorites_no=There were no favorites added yet...
 left_feedback=Отправить отзыв
 left_home=Информация о системе
 left_others=Утилиты
@@ -123,6 +128,20 @@ settings_security_description=Security alerts will let you setup email notificat
 settings_right_hotkey_options_title=Hotkey options
 settings_right_sysinfo_page_options_title=System Information page options
 
+settings_right_hotkey_custom_options_description=Custom links enable you to use digits from <code>1</code> to <code>9</code> in order to quick-access any valid Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> The <code>URL</code> can be extracted from the currently opened right frame content page, by reading its source. It's important that <code>URL</code> has no slash at the begining and doesn't use prefixes. For example, to quick-switch to Apache, set to <code>custom link 1</code> field <code>apache.</code> If the default hotkeys modifier set to <code>Alt,</code> clicking <code>Alt+1</code>, will open you Apache module.
+settings_hotkey_custom_1=Custom link <code>1</code>
+settings_hotkey_custom_2=Custom link <code>2</code>
+settings_hotkey_custom_3=Custom link <code>3</code>
+settings_hotkey_custom_4=Custom link <code>4</code>
+settings_hotkey_custom_5=Custom link <code>5</code>
+settings_hotkey_custom_6=Custom link <code>6</code>
+settings_hotkey_custom_7=Custom link <code>7</code>
+settings_hotkey_custom_8=Custom link <code>8</code>
+settings_hotkey_custom_9=Custom link <code>9</code>
+
+settings_animation_left=Enable animation in navigation menu
+settings_animation_tabs=Enable animation in tabs
+settings_loader_top=Enable page progress loader on top of the screen
 settings_loader_left=Enable spinner for navigation menu
 settings_loader_right=Enable spinner for content page
 settings_right_reload=Load default content page
@@ -147,6 +166,7 @@ settings_window_customized_checkboxes_and_radios=Enable customized checkboxes an
 
 settings_leftmenu_section_hide_refresh_modules=Hide <kbd>Refresh Modules</kbd> link
 settings_leftmenu_section_hide_unused_modules=Hide <kbd>Unused Modules</kbd> link
+settings_favorites=Show favorites button
 settings_leftmenu_button_language=Show language button
 settings_leftmenu_button_refresh=Show refresh button
 
@@ -159,6 +179,8 @@ settings_hotkey_toggle_key_virtualmin=Hotkey for Virtualmin
 settings_hotkey_toggle_key_cloudmin=Hotkey for Cloudmin
 settings_hotkey_toggle_key_usermin=Hotkey for Usermin
 settings_hotkey_toggle_key_webmail=Hotkey for Mail
+settings_hotkey_sysinfo=Hotkey for System Information
+settings_hotkey_favorites=Hotkey for Favorites
 settings_hotkey_focus_search=Hotkey for search field
 settings_hotkey_reload=Hotkey for page reload
 
